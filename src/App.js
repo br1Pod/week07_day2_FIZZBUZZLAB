@@ -20,19 +20,25 @@ function App() {
     } else {
       setAnswer(currentNum);
     }
-  }  
+  }
 
   const handleInc = () => {
     setCurrentNum(currentNum + 1);
   }
 
+  const handleMatch = (e) => {
+    if (e.target.value === checkNum()) {
+      return 
+    }
+  }  
+
   return (
     <>
       <h2>Current Number: {answer}</h2>
       <button value={currentNum} onClick={handleInc}>Play!</button>
-      <button >Fizz</button>
-      <button >Buzz</button>
-      <button >FizzBuzz</button>
+      <button value='fizz' onClick={handleMatch} >Fizz</button>
+      <button value='buzz' onClick={handleMatch} >Buzz</button>
+      <button value='fizzbuzz' onClick={handleMatch} >FizzBuzz</button>
     
     </>
   );
